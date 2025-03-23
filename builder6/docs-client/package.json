@@ -1,0 +1,17 @@
+{
+  "name": "@builder6/docs-client",
+  "version": "3.0.4-beta.2",
+  "scripts": {
+    "start": "serve -s dist",
+    "build": "./build.sh"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "express": "^4.21.2",
+    "rimraf": "^5.0.0",
+    "serve": "^14.2.4"
+  }
+}

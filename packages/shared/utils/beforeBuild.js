@@ -36,7 +36,8 @@ let appSettings = null;
 
 try {
   // @ts-expect-error path is correct
-  appSettings = require("../../../../buildtools/config/appsettings.json");
+  // builder6 fix
+  appSettings = require("../../../builder6/buildtools/config/appsettings.json");
 } catch (e) {
   console.log(e);
 }
