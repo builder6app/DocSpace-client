@@ -1,7 +1,7 @@
 {
     "api": {
-      "origin": "http://localhost:5100",
-      "prefix": "/api/v6/docs",
+      "origin": "",
+      "prefix": "/api/2.0",
       "timeout": 30000
     },
     "proxy": {

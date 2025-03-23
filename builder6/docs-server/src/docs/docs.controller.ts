@@ -2,7 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { DocsService } from './docs.service';
 import { FilesService } from '@builder6/files';
 
-@Controller('/api/v6/docs')
+@Controller('/api/2.0')
 export class DocsController {
     constructor(
       private readonly filesService: FilesService,
