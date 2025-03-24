@@ -9,17 +9,6 @@ import { DocsModule } from './docs/docs.module';
 import { getConfigs, getEnvConfigs, getMoleculerConfigs } from '@builder6/core';
 import path from 'path';
 
-const getDocsClient = () => {
-  try {
-    // 解析 @builder6/docs-client 模块的路径
-    const docsClientPath = path.dirname(require.resolve('@builder6/docs-client/package.json'));
-    const docsClientDistPath = path.join(docsClientPath, 'dist');
-    return docsClientDistPath;
-  } catch (error) {
-    throw new Error('无法解析 @builder6/docs-client 模块: ' + error.message);
-  }
-};
-
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -35,9 +24,10 @@ const getDocsClient = () => {
       ...getEnvConfigs(),
     }),
     ServeStaticModule.forRoot({
-      rootPath: getDocsClient(),
+      rootPath: path.join(__dirname, '..', 'client'),
     }),
-    DocsModule],
+    DocsModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -12,8 +12,8 @@
     "**/*.sln": true,
     "**/*.slnf": true,
     "**/NuGet.Config": true,
-    "**/.gitignore": true,
-    "**/.gitmodules": true,
+    // "**/.gitignore": true,
+    // "**/.gitmodules": true,
     "**/.editorconfig": true,
     "**/LICENSE": true,
     "**/build/install": true

@@ -1,11 +1,16 @@
 {
-  "name": "@builder6/docs-server",
+  "name": "@builder6/docs",
   "version": "0.0.1",
   "description": "",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
+  "files": [
+    "client",
+    "dist"
+  ],
   "scripts": {
+    "build:client": "sh ./build_client.sh",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",

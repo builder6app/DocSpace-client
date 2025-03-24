@@ -1,7 +1,7 @@
-# npx rimraf dist 
-npx copyfiles -u 5 "../../packages/client/dist/**/*" dist
-npx copyfiles -u 3 ../../public/**/* dist/static
-npx copyfiles config.json dist/static/scripts
+npx rimraf client 
+npx copyfiles -u 5 "../../packages/client/dist/**/*" client
+npx copyfiles -u 3 ../../public/**/* client/static
+npx copyfiles config.json client/static/scripts
 
 # # 要搜索的目录（请根据需要进行修改）
 # DIRECTORY="dist"
