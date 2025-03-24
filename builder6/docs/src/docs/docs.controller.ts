@@ -1,4 +1,4 @@
-import { Controller, Get, Res } from '@nestjs/common';
+import { Controller, Get, Query, Res } from '@nestjs/common';
 import { DocsService } from './docs.service';
 import { FilesService } from '@builder6/files';
 import { Response } from 'express';
@@ -11,8 +11,13 @@ export class DocsController {
     ) {}
 
     @Get('/logo')
-    async getLogo(@Res() res: Response) {
-      res.redirect('/static/images/logo-wide.png');
+    async getLogo(
+        @Query('logotype') logotype: string,
+        @Res() res: Response) {
+      if (logotype === "1")
+        res.redirect('/static/images/logo-wide.png');
+      else
+        res.redirect('/static/images/logo.png');
     }
 
     @Get('/settings')

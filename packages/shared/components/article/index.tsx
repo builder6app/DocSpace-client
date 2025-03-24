@@ -221,7 +221,7 @@ const Article = ({
     };
   }, [onResize]);
 
-  const withDevTools =
+  const withDevTools = false && // Builder6 disabled
     !window.location.pathname.includes("portal-settings") &&
     !window.location.pathname.includes("management") &&
     isAdmin;
@@ -258,7 +258,8 @@ const Article = ({
 
         <SubArticleBody>
           {articleBodyContent ? articleBodyContent.props.children : null}
-          {!showArticleLoader && (
+          {/* Builder6 removed the following code */}
+          {false && !showArticleLoader && (
             <>
               {withDevTools && (
                 <ArticleDevToolsBar

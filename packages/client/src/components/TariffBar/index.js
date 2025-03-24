@@ -89,7 +89,8 @@ const TariffBar = ({
     checkBar();
   }, [title]);
 
-  const tariffBar = !standalone
+  // Builder6 disabled 
+  const tariffBar = false && !standalone
     ? getSaasBar(
         t,
         isPaymentPageAvailable,

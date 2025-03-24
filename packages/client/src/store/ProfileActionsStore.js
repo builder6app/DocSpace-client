@@ -372,26 +372,28 @@ class ProfileActionsStore {
         label: t("Common:Profile"),
         onClick: (obj) => this.onProfileClick(obj),
       },
-      settings,
-      management,
-      isAdmin &&
-        !isCommunity && {
-          key: "user-menu-payments",
-          icon: PaymentsReactSvgUrl,
-          label: t("Common:PaymentsTitle"),
-          onClick: (obj) => this.onPaymentsClick(obj),
-          additionalElement: <TariffBar />,
-        },
+      // Builder6 disabled
+      // settings,
+      // management,
+      // isAdmin &&
+      //   !isCommunity && {
+      //     key: "user-menu-payments",
+      //     icon: PaymentsReactSvgUrl,
+      //     label: t("Common:PaymentsTitle"),
+      //     onClick: (obj) => this.onPaymentsClick(obj),
+      //     additionalElement: <TariffBar />,
+      //   },
       {
         isSeparator: true,
         key: "separator1",
       },
-      helpCenterEnabled && {
-        key: "user-menu-help-center",
-        icon: HelpCenterReactSvgUrl,
-        label: t("Common:HelpCenter"),
-        onClick: this.onHelpCenterClick,
-      },
+      // Builder6 disabled
+      // helpCenterEnabled && {
+      //   key: "user-menu-help-center",
+      //   icon: HelpCenterReactSvgUrl,
+      //   label: t("Common:HelpCenter"),
+      //   onClick: this.onHelpCenterClick,
+      // },
       /*videoGuidesEnabled && {
         key: "user-menu-video",
         icon: VideoGuidesReactSvgUrl,
@@ -403,15 +405,16 @@ class ProfileActionsStore {
         isSeparator: true,
         key: "separator2",
       },
-      liveChat,
-      feedbackAndSupportEnabled && {
-        key: "user-menu-support",
-        icon: EmailReactSvgUrl,
-        label: t("Common:FeedbackAndSupport"),
-        onClick: this.onSupportClick,
-      },
-      bookTraining,
-      about,
+      // Builder6 disabled
+      // liveChat,
+      // feedbackAndSupportEnabled && {
+      //   key: "user-menu-support",
+      //   icon: EmailReactSvgUrl,
+      //   label: t("Common:FeedbackAndSupport"),
+      //   onClick: this.onSupportClick,
+      // },
+      // bookTraining,
+      // about,
     ];
 
     if (showFrameSignOut) {

@@ -445,7 +445,8 @@ const Bar = (props) => {
 
   const currentBar = getCurrentBar();
 
-  const showQuotasBar = !!currentBar && tReady;
+  // Builder6
+  const showQuotasBar = false // !!currentBar && tReady;
 
   React.useEffect(() => {
     const newValue =

@@ -1,4 +1,8 @@
+echo "Remove client folder ..."
 yarn rimraf client 
+
+echo "Build @docspace/client ..."
+yarn workspace @docspace/client build
 
 echo "Copy client statics ..."
 yarn copyfiles -u 5 "../../packages/client/dist/**/*" client

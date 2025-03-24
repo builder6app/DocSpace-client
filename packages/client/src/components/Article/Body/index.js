@@ -288,7 +288,8 @@ const ArticleBodyContent = (props) => {
         activeItemId={activeItemId}
       />
 
-      {!isDesktopClient &&
+      {/* Builder6 removed */}
+      {false && !isDesktopClient &&
         showText &&
         !firstLoad &&
         campaigns.length > 0 &&
