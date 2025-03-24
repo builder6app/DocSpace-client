@@ -1,6 +1,7 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Res } from '@nestjs/common';
 import { DocsService } from './docs.service';
 import { FilesService } from '@builder6/files';
+import { Response } from 'express';
 
 @Controller('/api/2.0')
 export class DocsController {
@@ -9,6 +10,10 @@ export class DocsController {
       private readonly docsService: DocsService,
     ) {}
 
+    @Get('/logo')
+    async getLogo(@Res() res: Response) {
+      res.redirect('/static/images/logo-wide.png');
+    }
 
     @Get('/settings')
     async getSettings(

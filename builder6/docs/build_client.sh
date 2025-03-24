@@ -1,25 +1,28 @@
-npx rimraf client 
-npx copyfiles -u 5 "../../packages/client/dist/**/*" client
-npx copyfiles -u 3 ../../public/**/* client/static
-npx copyfiles config.json client/static/scripts
+yarn rimraf client 
 
-# # 要搜索的目录（请根据需要进行修改）
-# DIRECTORY="dist"
+echo "Copy client statics ..."
+yarn copyfiles -u 5 "../../packages/client/dist/**/*" client
 
-# # 查找并替换函数
-# replace_statics() {
-#     # 找到所有目标文件
-#     find "$DIRECTORY" -type f \( -name "*.html" -o -name "*.css" -o -name "*.js" \) | while read -r file
-#     do
-#         # 使用 sed 命令替换文件内容
-#         sed -i '' -e 's#/static/#/docs/static/#g' "$file"
-#         sed -i '' -e 's#/locales/#/docs/locales/#g' "$file"
-#         echo "Replaced in: $file"
-#     done
-    
-#     sed -i '' -e 's#"static/#"docs/static/#g' "dist/index.html"
+echo "Copy public statics ..."
+yarn copyfiles -u 3 "../../public/**/*" client/static
 
-# }
+echo "Copy build6 statics ..."
+yarn copyfiles -u 1 "public/**/*" client/
 
-# # 调用替换函数
-# replace_statics
+echo "Replace statics ..."
+
+# 查找并替换函数
+replace_statics() {
+    # 找到所有目标文件
+    find "client" -type f \( -name "*.html" -o -name "*.css" -o -name "*.js" \) | while read -r file
+    do
+        # 使用 sed 命令替换文件内容
+        sed -i '' -e 's#/logo.ashx#/api/2.0/logo#g' "$file"
+        # echo "Replaced in: $file"
+    done
+}
+
+# 调用替换函数
+replace_statics
+
+echo "Done."
