@@ -1,16 +1,18 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MoleculerModule } from '@builder6/moleculer';
+import { OidcModule } from '@builder6/oidc';
 import { ServeStaticModule } from '@nestjs/serve-static';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DocsModule } from './docs/docs.module';
-import { getConfigs, getEnvConfigs, getMoleculerConfigs } from '@builder6/core';
+import { AuthModule, getConfigs, getEnvConfigs, getMoleculerConfigs } from '@builder6/core';
 import path from 'path';
 
 @Module({
   imports: [
+    AuthModule,
     ConfigModule.forRoot({
       load: [getConfigs],
       isGlobal: true, // 使配置在整个应用中可用
@@ -26,6 +28,7 @@ import path from 'path';
     ServeStaticModule.forRoot({
       rootPath: path.join(__dirname, '..', 'client'),
     }),
+    OidcModule,
     DocsModule,
   ],
   controllers: [AppController],
