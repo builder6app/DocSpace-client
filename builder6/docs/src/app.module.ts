@@ -4,8 +4,6 @@ import { MoleculerModule } from '@builder6/moleculer';
 import { OidcModule } from '@builder6/oidc';
 import { ServeStaticModule } from '@nestjs/serve-static';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { DocsModule } from './docs/docs.module';
 import { AuthModule, getConfigs, getEnvConfigs, getMoleculerConfigs } from '@builder6/core';
 import path from 'path';
@@ -31,7 +29,7 @@ import path from 'path';
     OidcModule,
     DocsModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

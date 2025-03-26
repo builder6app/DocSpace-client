@@ -3057,11 +3057,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@builder6/docs-client@npm:^3.0.4-beta.3, @builder6/docs-client@workspace:builder6/docs-client":
+  version: 0.0.0-use.local
+  resolution: "@builder6/docs-client@workspace:builder6/docs-client"
+  dependencies:
+    copyfiles: "npm:2.4.1"
+    rimraf: "npm:6.0.1"
+  languageName: unknown
+  linkType: soft
+
 "@builder6/docs@workspace:builder6/docs":
   version: 0.0.0-use.local
   resolution: "@builder6/docs@workspace:builder6/docs"
   dependencies:
     "@builder6/core": "npm:^0.14.13"
+    "@builder6/docs-client": "npm:^3.0.4-beta.3"
     "@builder6/files": "npm:^0.14.13"
     "@builder6/moleculer": "npm:^0.14.13"
     "@builder6/oidc": "npm:^0.14.13"
@@ -3086,6 +3096,7 @@ __metadata:
     bcrypt: "npm:^5.1.1"
     cookie-parser: "npm:^1.4.7"
     copyfiles: "npm:2.4.1"
+    dataloader: "npm:^2.2.3"
     dotenv-flow: "npm:^4.1.0"
     eslint: "npm:^8.0.0"
     eslint-config-prettier: "npm:^9.0.0"
@@ -14988,6 +14999,13 @@ __metadata:
     es-errors: "npm:^1.3.0"
     is-data-view: "npm:^1.0.1"
   checksum: 10/96f34f151bf02affb7b9f98762fb7aca1dd5f4553cb57b80bce750ca609c15d33ca659568ef1d422f7e35680736cbccb893a3d4b012760c758c1446bbdc4c6db
+  languageName: node
+  linkType: hard
+
+"dataloader@npm:^2.2.3":
+  version: 2.2.3
+  resolution: "dataloader@npm:2.2.3"
+  checksum: 10/83fe6259abe00ae64c5f48252ef59d8e5fcabda9fd4d26685f14a76eeca596bf6f9500d9f22a0094c50c3ea782a0977728f9367e232dfa0fdb5c9d646de279b2
   languageName: node
   linkType: hard
 

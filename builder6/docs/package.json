@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@builder6/core": "^0.14.13",
+    "@builder6/docs-client": "^3.0.4-beta.3",
     "@builder6/files": "^0.14.13",
     "@builder6/moleculer": "^0.14.13",
     "@builder6/oidc": "^0.14.13",
@@ -39,6 +40,7 @@
     "aws-sdk": "^2.1692.0",
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.7",
+    "dataloader": "^2.2.3",
     "dotenv-flow": "^4.1.0",
     "express-session": "^1.18.1",
     "ioredis": "^5.6.0",

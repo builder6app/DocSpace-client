@@ -1,0 +1,45 @@
+{
+    "api": {
+      "origin": "",
+      "prefix": "/api/2.0",
+      "timeout": 30000
+    },
+    "proxy": {
+      "url": ""
+    },
+    "wrongPortalNameUrl": "https://onlyoffice.com/wrongportalname.aspx",
+    "pdfViewer": false,
+    "pdfViewerUrl": "sdkjs/pdf/src/engine/viewer.js",
+    "imageThumbnails": true,
+    "editor": {
+      "requestClose": false
+    },
+    "management": {
+      "checkDomain": false
+    },
+    "oauth2": {
+      "origin": "https://oauth.onlyoffice.com",
+      "apiSystem": ["api-system-eu-central-1.onlyoffice.com", "api-system-us-west-2.onlyoffice.com"],
+      "identity": ["identity-eu-central-1.onlyoffice.com", "identity-us-west-2.onlyoffice.com"]
+    },
+    "firebase": {
+      "fetchTimeoutMillis": 3600000,
+      "minimumFetchIntervalMillis": 3600000
+    },
+    "campaigns": [
+      "OnlyofficeForDevelopers",
+      "OnlyofficeForPlatform",
+      "BookTraining",
+      "FormGallery"
+    ],
+    "logs": {
+      "enableLogs": false,
+      "logsToConsole": false
+    },
+    "loaders": {
+      "showLoader": true,
+      "showLoaderTime": 1000,
+      "loaderTime": null
+    }
+  }
+  
