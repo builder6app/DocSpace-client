@@ -5,7 +5,7 @@ import path from 'path';
  * @returns {string} dist 文件夹的完整路径
  * @throws {Error} 当路径无法解析时抛出错误
  */
-export const getDocsClient = () => {
+export const getDocsClientRoot = () => {
   try {
     // 解析 @builder6/docs-client 模块的路径
     const docsClientPath = path.dirname(require.resolve('@builder6/docs-client/package.json'));

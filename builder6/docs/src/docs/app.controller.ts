@@ -7,13 +7,6 @@ import { ConfigService } from '@nestjs/config';
 export class AppController {
   constructor(private configService: ConfigService) {}
 
-  // @Get('/')
-  // index(@Req() req: Request, @Res() res: Response) {
-  //   // If the user is authenticated, serve the React app
-  //   const reactApp = path.join(__dirname, '..', 'client');
-  //   return res.sendFile('index.html', { root: reactApp }); // Adjust the path as needed
-  // }
-
   @Get('/logo')
   async getLogo(@Query('logotype') logotype: string, @Res() res: Response) {
     if (logotype === '1') res.redirect('/static/images/logo-wide.png');

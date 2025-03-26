@@ -7,6 +7,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { DocsModule } from './docs/docs.module';
 import { AuthModule, getConfigs, getEnvConfigs, getMoleculerConfigs } from '@builder6/core';
 import path from 'path';
+import { getDocsClientRoot } from './docs/lib/getDocsClient';
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import path from 'path';
       ...getEnvConfigs(),
     }),
     ServeStaticModule.forRoot({
-      rootPath: path.join(__dirname, '..', 'client'),
+      rootPath: getDocsClientRoot()//path.join(__dirname, '..', 'client'),
     }),
     OidcModule,
     DocsModule,
