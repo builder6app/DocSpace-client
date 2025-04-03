@@ -29,6 +29,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import routes from "./routes";
 import Error404 from "@docspace/shared/components/errors/Error404";
+import config from "PACKAGE_FILE";
 
 import Root from "./Shell";
 
@@ -39,6 +40,9 @@ const router = createBrowserRouter([
     errorElement: <Error404 />,
     children: [...routes],
   },
-]);
+],
+{
+  basename: config.homepage, 
+});
 
 export default router;

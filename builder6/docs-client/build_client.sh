@@ -21,7 +21,8 @@ replace_statics() {
     find "dist" -type f \( -name "*.html" -o -name "*.css" -o -name "*.js" \) | while read -r file
     do
         # 使用 sed 命令替换文件内容
-        sed -i '' -e 's#/logo.ashx#/api/2.0/logo#g' "$file"
+        sed -i '' -e 's#/logo.ashx#/docs/logo#g' "$file"
+        sed -i '' -e 's#/manifest.json#/docs/manifest.json#g' "$file"
         # echo "Replaced in: $file"
     done
 }

@@ -9,7 +9,7 @@ export function loadLanguagePath(homepage, fixedNS = null) {
 
     const data = lngCollection?.get(`${fixedNS || ns}`);
 
-    if (!data) return `/locales/${language}/${fixedNS || ns}.json`;
+    if (!data) return `${homepage}/locales/${language}/${fixedNS || ns}.json`;
 
     let path = data?.split("/");
     const length = path?.length;
@@ -19,9 +19,9 @@ export function loadLanguagePath(homepage, fixedNS = null) {
     path = `/${path[length - 3]}/${path[length - 2]}/${path[length - 1]}`;
 
     if (ns.length > 0 && ns[0] === "Common" && isCommonPath) {
-      return `/static${path}`;
+      return `${homepage}/static${path}`;
     }
 
-    return path;
+    return `${homepage}${path}`;
   };
 }

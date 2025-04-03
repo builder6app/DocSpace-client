@@ -392,10 +392,10 @@ module.exports = (env, argv) => {
 
       </style>`;
   } else {
-    htmlTemplate.browserDetectorUrl = `/static/scripts/browserDetector.js?hash=${
+    htmlTemplate.browserDetectorUrl = `${homepage}/static/scripts/browserDetector.js?hash=${
       runtime.checksums["browserDetector.js"] || dateHash
     }`;
-    htmlTemplate.configUrl = `/static/scripts/config.json?hash=${
+    htmlTemplate.configUrl = `${homepage}/static/scripts/config.json?hash=${
       runtime.checksums["config.json"] || dateHash
     }`;
   }

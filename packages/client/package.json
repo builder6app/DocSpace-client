@@ -2,7 +2,7 @@
   "name": "@docspace/client",
   "version": "3.0.4",
   "private": true,
-  "homepage": "",
+  "homepage": "/docs",
   "scripts": {
     "build": "yarn build:translations && NODE_OPTIONS=--openssl-legacy-provider webpack --mode production",
     "build:translations": "node scripts/buildTranslations.js",
