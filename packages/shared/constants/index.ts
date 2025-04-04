@@ -23,6 +23,7 @@
 // All the Product's GUI elements, including illustrations and icon sets, as well as technical writing
 // content are licensed under the terms of the Creative Commons Attribution-ShareAlike 4.0
 // International. See the License terms at http://creativecommons.org/licenses/by-sa/4.0/legalcode
+import config from "PACKAGE_FILE";
 
 import ShareAppleReactSvg from "PUBLIC_DIR/images/share.apple.react.svg";
 import ShareGoogleReactSvg from "PUBLIC_DIR/images/share.google.react.svg";
@@ -148,8 +149,8 @@ export const WRONG_PORTAL_NAME_URL =
   (typeof window !== "undefined" && window.ClientConfig?.wrongPortalNameUrl) ||
   `https://www.onlyoffice.com/wrongportalname.aspx`;
 
-export const MEDIA_VIEW_URL = "/media/view/";
-export const PUBLIC_MEDIA_VIEW_URL = "/rooms/share/media/view";
+export const MEDIA_VIEW_URL = `${config.homepage}/media/view`;
+export const PUBLIC_MEDIA_VIEW_URL = `${config.homepage}/rooms/share/media/view`;
 
 export const RTL_LANGUAGES = Object.freeze([
   "ar",

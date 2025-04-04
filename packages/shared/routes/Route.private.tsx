@@ -32,6 +32,7 @@ import AppLoader from "@docspace/shared/components/app-loader";
 
 import { TenantStatus } from "@docspace/shared/enums";
 import { combineUrl } from "@docspace/shared/utils/combineUrl";
+import config from "PACKAGE_FILE";
 
 import type { PrivateRouteProps } from "./Routers.types";
 
@@ -151,7 +152,11 @@ export const PrivateRoute = (props: PrivateRouteProps) => {
       }
 
       window.location.replace(
-        combineUrl(window.ClientConfig?.proxy?.url, redirectPath),
+        combineUrl(
+          window.ClientConfig?.proxy?.url,
+          config.homepage,
+          redirectPath,
+        ),
       );
 
       return null;

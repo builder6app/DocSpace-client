@@ -28,6 +28,7 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 
+import config from "PACKAGE_FILE";
 import { TenantStatus } from "@docspace/shared/enums";
 import { combineUrl } from "@docspace/shared/utils/combineUrl";
 import { isPublicPreview, isPublicRoom } from "@docspace/shared/utils/common";
@@ -77,6 +78,7 @@ export const PublicRoute = (props: PublicRouteProps) => {
           replace
           to={combineUrl(
             window.ClientConfig?.proxy?.url,
+            config.homepage,
             "/preparation-portal",
           )}
         />
@@ -86,14 +88,14 @@ export const PublicRoute = (props: PublicRouteProps) => {
       return (
         <Navigate
           replace
-          to={combineUrl(window.ClientConfig?.proxy?.url, "/unavailable")}
+          to={combineUrl(window.ClientConfig?.proxy?.url, config.homepage, "/unavailable")}
         />
       );
     }
 
     if (isFirstLoaded && !wizardCompleted && location.pathname !== "/wizard") {
       window.location.replace(
-        combineUrl(window.ClientConfig?.proxy?.url, "/wizard"),
+        combineUrl(window.ClientConfig?.proxy?.url, config.homepage, "/wizard"),
       );
       return null;
     }
@@ -109,6 +111,7 @@ export const PublicRoute = (props: PublicRouteProps) => {
           replace
           to={combineUrl(
             window.ClientConfig?.proxy?.url,
+            config.homepage,
             "/preparation-portal",
           )}
         />
@@ -123,7 +126,7 @@ export const PublicRoute = (props: PublicRouteProps) => {
       return (
         <Navigate
           replace
-          to={combineUrl(window.ClientConfig?.proxy?.url, "/unavailable")}
+          to={combineUrl(window.ClientConfig?.proxy?.url, config.homepage, "/unavailable")}
         />
       );
     }
@@ -135,7 +138,7 @@ export const PublicRoute = (props: PublicRouteProps) => {
       !isPortalDeactivate
     ) {
       window.location.replace(
-        combineUrl(window.ClientConfig?.proxy?.url, "/login"),
+        combineUrl(window.ClientConfig?.proxy?.url, config.homepage, "/login"),
       );
 
       return null;
