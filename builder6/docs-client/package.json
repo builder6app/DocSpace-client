@@ -3,15 +3,11 @@
   "files": [
     "dist"
   ],
-  "version": "3.0.4-beta.5",
+  "version": "3.0.4-beta.7",
   "scripts": {
     "build": "sh ./build_client.sh"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "copyfiles": "2.4.1",
-    "rimraf": "6.0.1"
-  }
+  "description": ""
 }
