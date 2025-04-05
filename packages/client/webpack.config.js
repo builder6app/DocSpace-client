@@ -282,12 +282,17 @@ const config = {
         //   from: "images/**/*.*",
         // },
         {
+          from: path.resolve(__dirname, "..", "..", "public"),
+          to: "static",
+        },
+        {
           context: path.resolve(__dirname, "public"),
           from: "locales/**/*.json",
           transform: minifyJson,
         },
       ],
     }),
+
   ],
 };
 

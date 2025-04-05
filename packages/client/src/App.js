@@ -48,6 +48,8 @@ const App = () => {
     const replaceRegex = /(\/)+/g;
     const pathname = window.location.pathname;
 
+    window.store = store;
+
     if (regex.test(pathname))
       window.location.replace(pathname.replace(replaceRegex, "$1"));
   }, []);
