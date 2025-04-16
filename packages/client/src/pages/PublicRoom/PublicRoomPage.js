@@ -39,6 +39,7 @@ import {
   RoomsType,
   ShareAccessRights,
 } from "@docspace/shared/enums";
+import config from "PACKAGE_FILE";
 
 import SectionHeaderContent from "../Home/Section/Header";
 import SectionFilterContent from "../Home/Section/Filter";
@@ -92,6 +93,7 @@ const PublicRoomPage = (props) => {
       try {
         const path = combineUrl(
           window.ClientConfig?.proxy?.url,
+          config.homepage,
           "/login?publicAuth=true",
         );
 

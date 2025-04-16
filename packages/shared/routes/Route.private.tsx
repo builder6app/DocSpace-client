@@ -69,7 +69,11 @@ export const PrivateRoute = (props: PrivateRouteProps) => {
     if (!user && isAuthenticated) {
       if (isPortalDeactivate) {
         window.location.replace(
-          combineUrl(window.ClientConfig?.proxy?.url, "/unavailable"),
+          combineUrl(
+            window.ClientConfig?.proxy?.url,
+            config.homepage,
+            "/unavailable",
+          ),
         );
 
         return null;
@@ -135,7 +139,11 @@ export const PrivateRoute = (props: PrivateRouteProps) => {
     if (isLoaded && !isAuthenticated) {
       if (isPortalDeactivate) {
         window.location.replace(
-          combineUrl(window.ClientConfig?.proxy?.url, "/unavailable"),
+          combineUrl(
+            window.ClientConfig?.proxy?.url,
+            config.homepage,
+            "/unavailable",
+          ),
         );
 
         return null;
@@ -184,6 +192,7 @@ export const PrivateRoute = (props: PrivateRouteProps) => {
           replace
           to={combineUrl(
             window.ClientConfig?.proxy?.url,
+            config.homepage,
             "/preparation-portal",
           )}
         />
@@ -203,6 +212,7 @@ export const PrivateRoute = (props: PrivateRouteProps) => {
           replace
           to={combineUrl(
             window.ClientConfig?.proxy?.url,
+            config.homepage,
             "/portal-settings/payments/portal-payments",
           )}
         />
@@ -221,6 +231,7 @@ export const PrivateRoute = (props: PrivateRouteProps) => {
           replace
           to={combineUrl(
             window.ClientConfig?.proxy?.url,
+            config.homepage,
             "/portal-unavailable",
           )}
         />
@@ -233,7 +244,11 @@ export const PrivateRoute = (props: PrivateRouteProps) => {
     if (isPortalDeactivate && location.pathname !== "/unavailable") {
       return (
         <Navigate
-          to={combineUrl(window.ClientConfig?.proxy?.url, "/unavailable")}
+          to={combineUrl(
+            window.ClientConfig?.proxy?.url,
+            config.homepage,
+            "/unavailable",
+          )}
           state={{ from: location }}
         />
       );

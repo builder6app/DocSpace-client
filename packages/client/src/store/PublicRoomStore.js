@@ -34,6 +34,7 @@ import {
   frameCallCommand,
   isPublicRoom as isPublicRoomUtil,
 } from "@docspace/shared/utils/common";
+import config from "PACKAGE_FILE";
 
 import { CategoryType } from "SRC_DIR/helpers/constants";
 import { getCategoryUrl } from "SRC_DIR/helpers/utils";
@@ -129,7 +130,7 @@ class PublicRoomStore {
           return fetchFiles(folderId, filter).catch((error) => {
             if (error?.response?.status === 403) {
               window.location.replace(
-                combineUrl(window.ClientConfig?.proxy?.url, "/login"),
+                combineUrl(window.ClientConfig?.proxy?.url, config.homepage, "/login"),
               );
             }
           });

@@ -35,6 +35,7 @@ import { thumbnailStatuses } from "SRC_DIR/helpers/filesConstants";
 import { isNullOrUndefined } from "@docspace/shared/utils/typeGuards";
 import FilesFilter from "@docspace/shared/api/files/filter";
 import { toastr } from "@docspace/shared/components/toast";
+import config from "PACKAGE_FILE";
 
 import { getCategoryUrl } from "SRC_DIR/helpers/utils";
 
@@ -136,10 +137,10 @@ class MediaViewerDataStore {
       const key = this.publicRoomStore.publicRoomKey;
       const filterObj = FilesFilter.getFilter(window.location);
 
-      return `${combineUrl("/rooms/share", MEDIA_VIEW_URL, id)}?key=${key}&${filterObj.toUrlParams()}`;
+      return `${combineUrl(config.homepage, "/rooms/share", MEDIA_VIEW_URL, id)}?key=${key}&${filterObj.toUrlParams()}`;
     }
 
-    return combineUrl(MEDIA_VIEW_URL, id);
+    return combineUrl(config.homepage, MEDIA_VIEW_URL, id);
   };
 
   getFirstUrl = () => {
@@ -147,7 +148,7 @@ class MediaViewerDataStore {
       const key = this.publicRoomStore.publicRoomKey;
       const filterObj = FilesFilter.getFilter(window.location);
 
-      const url = `${combineUrl("/rooms/share")}?key=${key}&${filterObj.toUrlParams()}`;
+      const url = `${combineUrl(config.homepage, "/rooms/share")}?key=${key}&${filterObj.toUrlParams()}`;
 
       return url;
     }
@@ -158,7 +159,7 @@ class MediaViewerDataStore {
 
     const url = getCategoryUrl(this.filesStore.categoryType, filter.folder);
 
-    const pathname = `${url}?${queryParams}`;
+    const pathname = combineUrl(config.homepage, `${url}?${queryParams}`);
 
     return pathname;
   };

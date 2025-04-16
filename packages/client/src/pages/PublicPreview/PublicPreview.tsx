@@ -16,6 +16,7 @@ import type {
   NumberOrString,
   PlaylistType,
 } from "@docspace/shared/components/media-viewer/MediaViewer.types";
+import config from "PACKAGE_FILE";
 
 import type { PublicPreviewProps } from "./PublicPreview.types";
 import { DEFAULT_EXTS_IMAGE } from "./PublicPreview.constants";
@@ -55,6 +56,7 @@ const PublicPreview = ({
 
         window.location.href = combineUrl(
           window.ClientConfig?.proxy?.url,
+          config.homepage,
           "/login",
           `?referenceUrl=${pathName}${searchName}`,
         );

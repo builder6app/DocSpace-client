@@ -3,7 +3,7 @@
   "files": [
     "dist"
   ],
-  "version": "3.0.4-beta.7",
+  "version": "3.0.4-beta.8",
   "scripts": {
     "build": "sh ./build_client.sh"
   },

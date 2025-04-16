@@ -79,7 +79,7 @@ const Shell = ({ items = [], page = "home", ...rest }) => {
     roomsMode,
     setSnackbarExist,
     userTheme,
-    //user,
+    // user,
     userId,
     userLoginEventId,
     currentDeviceType,
@@ -182,7 +182,11 @@ const Shell = ({ items = [], page = "home", ...rest }) => {
         sessionStorage.setItem("loggedOutUserId", userId);
 
         window.location.replace(
-          combineUrl(window.ClientConfig?.proxy?.url, "/login"),
+          combineUrl(
+            window.ClientConfig?.proxy?.url,
+            config.homepage,
+            "/login",
+          ),
         );
       }
     };

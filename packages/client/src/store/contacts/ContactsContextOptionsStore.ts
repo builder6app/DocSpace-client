@@ -42,6 +42,7 @@ import { UserStore } from "@docspace/shared/store/UserStore";
 import { CurrentQuotasStore } from "@docspace/shared/store/CurrentQuotaStore";
 import { checkDialogsOpen } from "@docspace/shared/utils/checkDialogsOpen";
 import { getUserTypeTranslation } from "@docspace/shared/utils/common";
+import config from "PACKAGE_FILE";
 
 import PencilReactSvgUrl from "PUBLIC_DIR/images/pencil.react.svg?url";
 import ChangeMailReactSvgUrl from "PUBLIC_DIR/images/email.react.svg?url";
@@ -83,7 +84,11 @@ import UsersStore from "./UsersStore";
 import DialogStore from "./DialogStore";
 import TargetUserStore from "./TargetUserStore";
 
-const PROXY_HOMEPAGE_URL = combineUrl(window.ClientConfig?.proxy?.url, "/");
+const PROXY_HOMEPAGE_URL = combineUrl(
+  window.ClientConfig?.proxy?.url,
+  config.homepage,
+  "/",
+);
 
 type TItem = ReturnType<UsersStore["getPeopleListItem"]>;
 

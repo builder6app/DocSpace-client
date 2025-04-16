@@ -99,6 +99,7 @@ const ArticleMainButtonContent = (props) => {
       key: "invite-link",
       icon: combineUrl(
         window.ClientConfig?.proxy?.url,
+        homepage,
         InvitationLinkReactSvgUrl,
       ),
       label: t("PeopleTranslations:InviteLinkTitle"),

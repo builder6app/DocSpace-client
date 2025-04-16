@@ -146,7 +146,7 @@ const VersionRow = (props) => {
 
     if (MediaView || ImageView) {
       return window.open(
-        combineUrl(MEDIA_VIEW_URL, info.id),
+        combineUrl(config.homepage, MEDIA_VIEW_URL, info.id),
         openOnNewPage ? "_blank" : "_self",
       );
     }

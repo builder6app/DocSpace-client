@@ -126,7 +126,11 @@ export const PublicRoute = (props: PublicRouteProps) => {
       return (
         <Navigate
           replace
-          to={combineUrl(window.ClientConfig?.proxy?.url, config.homepage, "/unavailable")}
+          to={combineUrl(
+            window.ClientConfig?.proxy?.url,
+            config.homepage,
+            "/unavailable",
+          )}
         />
       );
     }

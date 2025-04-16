@@ -3185,7 +3185,7 @@ class FilesActionStore {
 
   onSuccessExportRoomIndex = (t, fileName, fileUrl) => {
     const { openOnNewPage } = this.filesSettingsStore;
-    const urlWithProxy = combineUrl(window.ClientConfig?.proxy?.url, fileUrl);
+    const urlWithProxy = combineUrl(window.ClientConfig?.proxy?.url, config.homepage, fileUrl);
 
     showSuccessExportRoomIndexToast(t, fileName, urlWithProxy, openOnNewPage);
   };

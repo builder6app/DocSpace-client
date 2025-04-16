@@ -1,6 +1,6 @@
 {
   "api": {
-    "origin": "http://localhost:5100",
+    "origin": "",
     "prefix": "/api/v6/docs",
     "timeout": 30000
   },

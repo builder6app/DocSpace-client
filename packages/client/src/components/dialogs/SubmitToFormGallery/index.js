@@ -76,8 +76,8 @@ const SubmitToFormGallery = ({
 
     setIsSubmitting(true);
 
-    const origin = combineUrl(window.ClientConfig?.proxy?.url);
-    const fileSrc = `${origin}/filehandler.ashx?action=download&fileid=${formItem.id}`;
+    const origin = combineUrl(window.ClientConfig?.proxy?.url, config.homepage);
+    const fileSrc = `${origin}/filehandler?action=download&fileid=${formItem.id}`;
 
     const file = await fetch(fileSrc)
       .then((res) => {
